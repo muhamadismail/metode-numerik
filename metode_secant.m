@@ -11,10 +11,10 @@
 function metode_secant(f, x_a, x_b, max_iter)
   
   % Label Kepala Tabel
-  printf("i \t")
-  printf("x_i-1 \t\t x_i \t\t x_i+1 \t\t")
-  printf("f(x_i-1) \t f(x_i) \t f(x_i+1) \t\t")
-  printf("error(%%)\n\n")
+  printf('i \t')
+  printf('x_i-1 \t\t x_i \t\t x_i+1 \t\t')
+  printf('f(x_i-1) \t f(x_i) \t f(x_i+1) \t\t')
+  printf('error(%%)\n\n')
   
   for i = 1:max_iter
     
@@ -23,7 +23,7 @@ function metode_secant(f, x_a, x_b, max_iter)
     % Kalau pembaginya nilainya 0, loopnya harus berhenti. Soalnya kalau
     % sesuatu dibagi 0 kan tak higga.
     if denominator == 0
-      printf("\nLoop berhenti. Pembagi bernilai 0\n")
+      printf('\nLoop berhenti. Pembagi bernilai 0\n')
       break
 
     else
@@ -31,11 +31,11 @@ function metode_secant(f, x_a, x_b, max_iter)
       x_baru = x_b - f(x_b) * (x_b - x_a) / denominator;
       
       % Cetak nilai semua x dan semua f(x) nya dalam bentuk tabel.
-      printf("%d \t", i)
-      printf("%f \t %f \t %f \t", x_a, x_b, x_baru)
-      printf("%f \t %f \t %f \t\t", f(x_a), f(x_b), f(x_baru))
+      printf('%d \t', i)
+      printf('%f \t %f \t %f \t', x_a, x_b, x_baru)
+      printf('%f \t %f \t %f \t\t', f(x_a), f(x_b), f(x_baru))
       % Cari nilai error.
-      printf("%.2f\n", (abs((x_b - x_baru)/x_b) * 100))
+      printf('%.2f\n', (abs((x_b - x_baru)/x_b) * 100))
       
       % Ganti x_a jadi x_b
       % trus ganti juga x_b jadi x_baru
@@ -47,6 +47,6 @@ function metode_secant(f, x_a, x_b, max_iter)
   endfor
   
   % Print hasil (nilai x yang f(x) = 0)
-  printf("Answer x = %f\n", x_b)
+  printf('Answer x = %f\n', x_b)
 
 endfunction

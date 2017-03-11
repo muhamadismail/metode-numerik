@@ -16,17 +16,17 @@
 function metode_newton_rhapson(f, f_d, x_a, max_iter)
   
   % Label Kepala Tabel
-  printf("i \t")
-  printf("x_i \t\t x_i+1 \t\t")
-  printf("f(x_i) \t f(x_i+1) \t\t")
-  printf("error(%%)\n\n")
+  printf('i \t')
+  printf('x_i \t\t x_i+1 \t\t')
+  printf('f(x_i) \t f(x_i+1) \t\t')
+  printf('error(%%)\n\n')
   
   for i = 1:max_iter
     
     % Kalau nilai f'(x) (turunan dari fungsi f(x)) yang jadi denominatornya)
     % adalah 0, hentikan loop.
     if f_d(x_a) == 0
-      printf("\nLoop berhenti. f'(x_i) bernilai 0\n")
+      printf('\nLoop berhenti. f'(x_i) bernilai 0\n')
       break
       
     else
@@ -35,10 +35,10 @@ function metode_newton_rhapson(f, f_d, x_a, max_iter)
       
       % Cetak nilai x_i, x_i+i, dan f(x_i) dan f(x_i+1).
       % Cetak juga nilai errornya (mohon dicek apakah salah caranya?).
-      printf("%d \t", i)
-      printf("%f \t %f \t", x_a, x_b)
-      printf("%f \t %f \t %f \t\t", f(x_a), f(x_b))
-      printf("%.2f\n", (abs((x_b - x_a)/x_a) * 100))
+      printf('%d \t', i)
+      printf('%f \t %f \t', x_a, x_b)
+      printf('%f \t %f \t %f \t\t', f(x_a), f(x_b))
+      printf('%.2f\n', (abs((x_b - x_a)/x_a) * 100))
       
       % Ganti nilai x_i atau x_a ke nilai x_i+1 atau x_b.
       x_a = x_b;
@@ -48,6 +48,6 @@ function metode_newton_rhapson(f, f_d, x_a, max_iter)
   endfor
   
   % Print hasil (nilai x yang f(x) = 0)
-  printf("Answer x = %f\n", x_a)
+  printf('Answer x = %f\n', x_a)
   
 endfunction

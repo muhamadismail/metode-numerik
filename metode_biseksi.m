@@ -13,20 +13,20 @@ function metode_biseksi(f, x_a, x_b, max_iter)
   if (f(x_a)*f(x_b) < 0)
     
     % Mencetak label tabel
-    printf("i \t")
-    printf("x_a \t\t x_b \t\t x_t \t\t")
-    printf("f(x_a) \t f(x_b) \t f(x_t) \t")
-    printf("error (%%)\n")
+    printf('i \t')
+    printf('x_a \t\t x_b \t\t x_t \t\t')
+    printf('f(x_a) \t f(x_b) \t f(x_t) \t')
+    printf('error (%%)\n')
     
     for i = 1:max_iter
       x_t = (x_a + x_b) / 2;
       error = abs(x_b - x_a) / x_a;
       
       % Buat Cetak
-      printf("\n%d \t", i)
-      printf("%f \t %f \t %f \t", x_a, x_b, x_t)
-      printf("%f \t %f \t %f \t", f(x_a), f(x_b), f(x_t))
-      printf("%.2f", error * 100)
+      printf('\n%d \t', i)
+      printf('%f \t %f \t %f \t', x_a, x_b, x_t)
+      printf('%f \t %f \t %f \t', f(x_a), f(x_b), f(x_t))
+      printf('%.2f', error * 100)
       
       % Cek apakah dalam range x_a dan x_t masih ada akar.
       if ( f(x_a)*f(x_t) < 0 )
@@ -38,8 +38,8 @@ function metode_biseksi(f, x_a, x_b, max_iter)
       endif
     endfor
     
-    printf("\n nilai x = %f\n", x_t)
+    printf('\n nilai x = %f\n', x_t)
   else
-    printf("Tidak ada akar\n")
+    printf('Tidak ada akar\n')
   endif
 endfunction
