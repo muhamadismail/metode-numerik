@@ -52,7 +52,7 @@ function [solusi, list_solusi] = jacobi(matrix, err_limit)
       
       % Menjumlahkan 1 baris dengan nilai solusi.
       for j = 1:baris
-        if j != i
+        if j ~= i
           sigma += matrix(i,j) * solusi(j);
         endif
       endfor
@@ -96,23 +96,23 @@ function print_hasil(list_solusi)
   for i = 1:kolom
     
     % Cetak daftar proses perubahan nilai solusi dan error.
-    printf("%4s x%2d %4s", " ", i, " ")
+    printf('%4s x%2d %4s', ' ', i, ' ')
   
   endfor
   
   for i = 1:kolom
     
     % Cetak daftar proses perubahan nilai solusi dan error.
-    printf("%4s err%d%4s", " ", i, " ")
+    printf('%4s err%d%4s', ' ', i, ' ')
   
   endfor
   
-  printf("\n")
+  printf('\n')
   
   for i = 1:baris
     
     for j = 1:kolom
-      printf("%2s %5.5f %2s", " ", list_solusi(i,j), " ")
+      printf('%2s %5.5f %2s', ' ', list_solusi(i,j), ' ')
     endfor
       
     if i > 1
@@ -121,18 +121,18 @@ function print_hasil(list_solusi)
       ) .* 100;
       
       for j = 1:kolom
-        printf("%3s %5.2f %3s", " ", error(j), " ")
+        printf('%3s %5.2f %3s', ' ', error(j), ' ')
       endfor
       
     else
       for j = 1:kolom
-        printf("%5s - %5s", " ", " ")
+        printf('%5s - %5s', ' ', ' ')
       endfor
     endif
     
-    printf("\n")
+    printf('\n')
     
   endfor
   
-  printf("\n")
+  printf('\n')
 endfunction
